@@ -38,4 +38,20 @@ class CoordinatesTest {
         assertThat(Coordinates.create(1 + 4, 1 + 3).distanceToOrigin())
                 .isEqualTo(Math.sqrt(4 * 4 + 3 * 3));
     }
+
+    @Test
+    void isNextTo() {
+        assertThat(Coordinates.create(2, 2).isNextTo(Coordinates.create(2+1,2))).isTrue();
+        assertThat(Coordinates.create(2, 2).isNextTo(Coordinates.create(2-1,2))).isTrue();
+        assertThat(Coordinates.create(2, 2).isNextTo(Coordinates.create(2,2+1))).isTrue();
+        assertThat(Coordinates.create(2, 2).isNextTo(Coordinates.create(2,2-1))).isTrue();
+
+        assertThat(Coordinates.create(2, 2).isNextTo(Coordinates.create(2+1,2+1))).isFalse();
+        assertThat(Coordinates.create(2, 2).isNextTo(Coordinates.create(2+1,2-1))).isFalse();
+        assertThat(Coordinates.create(2, 2).isNextTo(Coordinates.create(2-1,2+1))).isFalse();
+        assertThat(Coordinates.create(2, 2).isNextTo(Coordinates.create(2-1,2-1))).isFalse();
+
+        assertThat(Coordinates.create(2, 2).isNextTo(Coordinates.create(2,8))).isFalse();
+        assertThat(Coordinates.create(2, 2).isNextTo(Coordinates.create(8,2))).isFalse();
+    }
 }

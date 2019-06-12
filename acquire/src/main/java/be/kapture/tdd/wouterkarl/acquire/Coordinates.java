@@ -1,9 +1,10 @@
 package be.kapture.tdd.wouterkarl.acquire;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Coordinates {
-    private static final List<String> NUMBER_TO_CHARACTER_LIST = List.of("A", "B", "C", "D", "E", "F", "G", "H", "I");
+    private static final List<String> NUMBER_TO_CHARACTER_LIST = Arrays.asList("A", "B", "C", "D", "E", "F", "G", "H", "I");
     private static final int XY_OFFSET = 1;
 
     private final int x;
@@ -24,6 +25,16 @@ public class Coordinates {
 
     public double distanceToOrigin(){
         return Math.sqrt(Math.pow(x - XY_OFFSET, 2) + Math.pow(y - XY_OFFSET, 2));
+    }
+
+    boolean isNextTo(Coordinates other){
+        if((this.x == other.x)) {
+            return Math.abs( this.y - other.y) == 1;
+        }
+        if((this.y == other.y)  ) {
+            return Math.abs(this.x - other.x) == 1;
+        }
+        return false;
     }
 
     @Override
