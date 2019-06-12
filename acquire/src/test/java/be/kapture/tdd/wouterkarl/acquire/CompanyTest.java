@@ -17,9 +17,13 @@ class CompanyTest {
             assertThat(company.price(4)).isEqualTo(400);
             assertThat(company.price(5)).isEqualTo(500);
             assertThat(company.price(6)).isEqualTo(600);
+            assertThat(company.price(10)).isEqualTo(600);
             assertThat(company.price(11)).isEqualTo(700);
+            assertThat(company.price(20)).isEqualTo(700);
             assertThat(company.price(21)).isEqualTo(800);
+            assertThat(company.price(30)).isEqualTo(800);
             assertThat(company.price(31)).isEqualTo(900);
+            assertThat(company.price(40)).isEqualTo(900);
             assertThat(company.price(41)).isEqualTo(1000);
         }
     }
@@ -32,9 +36,13 @@ class CompanyTest {
             assertThat(company.price(4)).isEqualTo(500);
             assertThat(company.price(5)).isEqualTo(600);
             assertThat(company.price(6)).isEqualTo(700);
+            assertThat(company.price(10)).isEqualTo(700);
             assertThat(company.price(11)).isEqualTo(800);
+            assertThat(company.price(20)).isEqualTo(800);
             assertThat(company.price(21)).isEqualTo(900);
+            assertThat(company.price(30)).isEqualTo(900);
             assertThat(company.price(31)).isEqualTo(1000);
+            assertThat(company.price(40)).isEqualTo(1000);
             assertThat(company.price(41)).isEqualTo(1100);
         }
     }
@@ -47,9 +55,13 @@ class CompanyTest {
             assertThat(company.price(4)).isEqualTo(600);
             assertThat(company.price(5)).isEqualTo(700);
             assertThat(company.price(6)).isEqualTo(800);
+            assertThat(company.price(10)).isEqualTo(800);
             assertThat(company.price(11)).isEqualTo(900);
+            assertThat(company.price(20)).isEqualTo(900);
             assertThat(company.price(21)).isEqualTo(1000);
+            assertThat(company.price(30)).isEqualTo(1000);
             assertThat(company.price(31)).isEqualTo(1100);
+            assertThat(company.price(40)).isEqualTo(1100);
             assertThat(company.price(41)).isEqualTo(1200);
         }
     }

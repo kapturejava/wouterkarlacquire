@@ -18,7 +18,7 @@ public enum Company {
         }
 
         if (size > 5 ) {
-            return (diff * SIZE_PRICE_OFFSET) +(size/10) * SIZE_PRIZE + 600;
+            return (diff * SIZE_PRICE_OFFSET) +((size-1)/10) * SIZE_PRIZE + 600;
         }
 
         return (diff * SIZE_PRICE_OFFSET ) + size * SIZE_PRIZE;
